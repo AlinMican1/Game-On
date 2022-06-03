@@ -12,7 +12,8 @@ public class GunSystem : MonoBehaviour
     int bulletsLeft, bulletsShot;
     bool shooting, readyToShoot, reloading;
 
-    private Recoil Recoil_Script;
+    public Recoil Recoil_Script;
+    public Recoil Gun_Recoil_Script;
 
     //Reference
     public Camera fpsCam;
@@ -28,7 +29,10 @@ public class GunSystem : MonoBehaviour
         bulletsLeft = magazineSize;
         readyToShoot = true;
 
-        Recoil_Script = transform.Find("CameraRot/CameraRecoil").GetComponent<Recoil>();
+        Recoil_Script = transform.root.GetChild(1).GetChild(0).GetComponent<Recoil>();
+        text = GameObject.Find("Canvas/weaponAmmoTXT").GetComponent<TextMeshProUGUI>();
+        fpsCam = transform.root.GetChild(1).GetChild(0).GetChild(0).GetComponent<Camera>();
+        Gun_Recoil_Script = transform.GetComponent<Recoil>();
     }
 
     private void Update()
@@ -95,7 +99,8 @@ public class GunSystem : MonoBehaviour
         //Graphics
         //Instantiate(bulletHoleGraphics, rayHit.point, Quaternion.Euler(0, 180, 0));
         //Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
-        
+        Recoil_Script.RecoilFire();
+        Gun_Recoil_Script.RecoilFire();
         bulletsLeft--;
         bulletsShot--;
         Invoke("ResetShot", timeBetweenShooting);
@@ -104,7 +109,7 @@ public class GunSystem : MonoBehaviour
         {
             Invoke("Shoot", timeBetweenShots);
         }
-        Recoil_Script.RecoilFire();
+        
     }
 
     private void ResetShot()

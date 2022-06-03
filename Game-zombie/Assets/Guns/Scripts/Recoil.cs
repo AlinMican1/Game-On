@@ -27,6 +27,7 @@ public class Recoil : MonoBehaviour
         transform.localRotation = Quaternion.Euler(currentRotation);
     }
 
+    //Adds recoil when fired, in the x,y,z direction.
     public void RecoilFire()
     {
         targetRotation += new Vector3(recoilX, Random.Range(-recoilY, recoilY), Random.Range(-recoilZ, recoilZ));
