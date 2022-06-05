@@ -19,9 +19,11 @@ public class SwitchWeapon : MonoBehaviour
     {
         if (Input.GetKeyDown(WeaponChange))
         {
+            //Destroy weapon on change, checking for current weapon.
             Transform currentWeapon = transform.GetChild(0).GetComponent<Transform>();
             GameObject.Destroy(currentWeapon.gameObject);
             i++;
+            //Checks if weapon is above the list count, if yes we set the i counter back to zero, otherwise we switch weapon.
             if(i + 1 > Weapons.Count)
             {
                 i = 0;

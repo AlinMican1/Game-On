@@ -22,7 +22,8 @@ public class GunSystem : MonoBehaviour
     public LayerMask whatIsEnemy;
 
     //Graphics
-    //public GameObject muzzleFlash, bulletHoleGraphics;
+    public ParticleSystem muzzleFlash; 
+    public GameObject bulletHoleGraphics;
     public TextMeshProUGUI text;
     private void Start()
     {
@@ -76,6 +77,7 @@ public class GunSystem : MonoBehaviour
 
     private void Shoot()
     {
+        muzzleFlash.Play();
         readyToShoot = false;
         //Spread
         float x = Random.Range(-spread, spread);
@@ -97,7 +99,8 @@ public class GunSystem : MonoBehaviour
 
         //ShakeCamera
         //Graphics
-        //Instantiate(bulletHoleGraphics, rayHit.point, Quaternion.Euler(0, 180, 0));
+        
+        Instantiate(bulletHoleGraphics, rayHit.point, Quaternion.Euler(0, -180, 0));
         //Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
         Recoil_Script.RecoilFire();
         Gun_Recoil_Script.RecoilFire();
