@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 893496457074527449}
   - component: {fileID: 751520990}
   - component: {fileID: 751520991}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,12 @@ MonoBehaviour:
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 0
+  muzzleFlash: {fileID: 0}
+  bulletHoleGraphics: {fileID: 0}
   text: {fileID: 0}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &751520991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 640786678681509038}
   - component: {fileID: 9147883396223436537}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +192,7 @@ GameObject:
   - component: {fileID: 1229784281406578099}
   - component: {fileID: 2327795630014205903}
   - component: {fileID: 5561607211510736089}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +275,7 @@ GameObject:
   - component: {fileID: 7448619253735804425}
   - component: {fileID: 2099517418418816241}
   - component: {fileID: 8478955294272891600}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +358,7 @@ GameObject:
   - component: {fileID: 5995421032797920322}
   - component: {fileID: 7693651632163621675}
   - component: {fileID: 7164633017259692711}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

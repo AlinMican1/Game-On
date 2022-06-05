@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1458734960924129922}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5521560027036993406}
   - component: {fileID: 4171058136539384635}
   - component: {fileID: 7902249632342959696}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 9143030853205991769}
   - component: {fileID: 2314801803177731348}
   - component: {fileID: 2976788173343951883}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5009,7 +5009,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4730754043189446418}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shoot point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5041,7 +5041,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8930580438729504854}
   - component: {fileID: 4629410551022274092}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5136,7 +5136,7 @@ GameObject:
   - component: {fileID: 8048659356476365190}
   - component: {fileID: -7025219675000560623}
   - component: {fileID: -2515576516388066081}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5193,6 +5193,9 @@ MonoBehaviour:
   muzzleFlash: {fileID: 2314801803177731348}
   bulletHoleGraphics: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d, type: 3}
   text: {fileID: 0}
+  IgnoreMask:
+    serializedVersion: 2
+    m_Bits: 3072
 --- !u!114 &-2515576516388066081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5205,8 +5208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b31e59244a3ebc54cb9ac042c550e1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoilX: -1
-  recoilY: 1
+  recoilX: -3.24
+  recoilY: 10.75
   recoilZ: 0.35
   snappiness: 5
   returnSpeed: 6
@@ -5220,6 +5223,10 @@ PrefabInstance:
     - target: {fileID: 118234, guid: a4e476a037022df448ead5d0ceea7d06, type: 3}
       propertyPath: m_Name
       value: SciFiGunLightBlack
+      objectReference: {fileID: 0}
+    - target: {fileID: 118234, guid: a4e476a037022df448ead5d0ceea7d06, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 453068, guid: a4e476a037022df448ead5d0ceea7d06, type: 3}
       propertyPath: m_RootOrder

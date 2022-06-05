@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7221237937113927061}
   - component: {fileID: 7004530185339635230}
   - component: {fileID: 6351079406973158182}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4883,7 +4883,7 @@ GameObject:
   - component: {fileID: 5687473535636975603}
   - component: {fileID: 162877342222177597}
   - component: {fileID: 5541707951330842716}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4977,7 +4977,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1354817893187180073}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5011,7 +5011,7 @@ GameObject:
   - component: {fileID: 6576358983391062807}
   - component: {fileID: 4405001660751908909}
   - component: {fileID: -7277507957619516354}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5067,6 +5067,9 @@ MonoBehaviour:
   muzzleFlash: {fileID: 7004530185339635230}
   bulletHoleGraphics: {fileID: 1000010844420130, guid: 4edabb1c0dde62743b137378c7d22980, type: 3}
   text: {fileID: 0}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &-7277507957619516354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5094,7 +5097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7064031329058206277}
   - component: {fileID: 759304792518978181}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5190,7 +5193,7 @@ GameObject:
   - component: {fileID: 5041095729568592595}
   - component: {fileID: 6304272959325557207}
   - component: {fileID: 766033270806773406}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

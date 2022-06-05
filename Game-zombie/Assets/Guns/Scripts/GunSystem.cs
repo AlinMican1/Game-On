@@ -11,20 +11,24 @@ public class GunSystem : MonoBehaviour
     public bool allowButtonHold;
     int bulletsLeft, bulletsShot;
     bool shooting, readyToShoot, reloading;
-
+    
     public Recoil Recoil_Script;
     public Recoil Gun_Recoil_Script;
 
-    //Reference
+    [Header("Reference")]
     public Camera fpsCam;
     public Transform attackPoint;
     public RaycastHit rayHit;
     public LayerMask whatIsEnemy;
 
-    //Graphics
+    [Header("Graphics")]
     public ParticleSystem muzzleFlash; 
     public GameObject bulletHoleGraphics;
     public TextMeshProUGUI text;
+
+    [Space(10)]
+    [SerializeField] LayerMask IgnoreMask = 1 << 10  | 1 << 11;    
+
     private void Start()
     {
         bulletsLeft = magazineSize;
@@ -87,7 +91,7 @@ public class GunSystem : MonoBehaviour
         Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
         Debug.DrawRay(fpsCam.transform.position, direction);
         //RayCast
-        if(Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range /*whatIsEnemy*/ ))
+        if(Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range, ~IgnoreMask))
         {
             Debug.Log(rayHit.collider.name);
             //enemy will need tag Enemy, and needs takeDamage function
@@ -99,8 +103,11 @@ public class GunSystem : MonoBehaviour
 
         //ShakeCamera
         //Graphics
+
         
-        Instantiate(bulletHoleGraphics, rayHit.point, Quaternion.Euler(0, -180, 0));
+
+        GameObject bulletHole = Instantiate(bulletHoleGraphics, rayHit.point, Quaternion.identity);
+        bulletHole.transform.rotation = Quaternion.FromToRotation(bulletHole.transform.forward, rayHit.normal);
         //Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
         Recoil_Script.RecoilFire();
         Gun_Recoil_Script.RecoilFire();
