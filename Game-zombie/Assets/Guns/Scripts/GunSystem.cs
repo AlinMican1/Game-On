@@ -13,9 +13,11 @@ public class GunSystem : MonoBehaviour
     int bulletsLeft, bulletsShot;
     bool shooting, readyToShoot, reloading;
     
+    
     [Header("Scripts")]
     public Recoil Recoil_Script;
     public Recoil Gun_Recoil_Script;
+    public BulletTrail BulletTrail_Script;
     
 
     [Header("Reference")]
@@ -23,6 +25,7 @@ public class GunSystem : MonoBehaviour
     public Transform attackPoint;
     public RaycastHit rayHit;
     public LayerMask whatIsEnemy;
+    
 
 
     [Header("Graphics")]
@@ -47,7 +50,7 @@ public class GunSystem : MonoBehaviour
         text = GameObject.Find("Canvas/weaponAmmoTXT").GetComponent<TextMeshProUGUI>();
         fpsCam = transform.root.GetChild(1).GetChild(0).GetChild(0).GetComponent<Camera>();
         Gun_Recoil_Script = transform.GetComponent<Recoil>();
-        //BulletTrail_Script = transform.GetChild(3).GetComponent<BulletTrail>();
+        
     }
 
     private void Update()
@@ -119,8 +122,18 @@ public class GunSystem : MonoBehaviour
         Recoil_Script.RecoilFire();
         Gun_Recoil_Script.RecoilFire();
         //Graphics
-        GameObject bulletHole = Instantiate(bulletHoleGraphics, rayHit.point, Quaternion.identity);
-        bulletHole.transform.rotation = Quaternion.FromToRotation(bulletHole.transform.forward, rayHit.normal);
+        if(Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range, ~IgnoreMask))
+        {
+            GameObject bulletHole = Instantiate(bulletHoleGraphics, rayHit.point, Quaternion.identity);
+            bulletHole.transform.rotation = Quaternion.FromToRotation(bulletHole.transform.forward, rayHit.normal);
+        }
+        
+
+        GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, barrelTip.rotation);
+        BulletTrail_Script = bullet.GetComponent<BulletTrail>();
+        float startTime = Time.time;
+        BulletTrail_Script.bulletForce(rayHit.point, barrelTip, startTime);
+
         //Play muzzleflash animation
         muzzleFlash.Play();
         
