@@ -34,6 +34,7 @@ public class GunSystem : MonoBehaviour
     public TextMeshProUGUI text;
     public GameObject bulletPrefab;
     public Transform barrelTip;
+    public Light PointLight;
     
 
     [Space(10)]
@@ -43,7 +44,7 @@ public class GunSystem : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
-     
+        
 
         //Get the recoil script, text and fpsCam from hiearchy
         Recoil_Script = transform.root.GetChild(1).GetChild(0).GetComponent<Recoil>();
@@ -129,10 +130,10 @@ public class GunSystem : MonoBehaviour
         }
         
 
-        GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, barrelTip.rotation);
-        BulletTrail_Script = bullet.GetComponent<BulletTrail>();
-        float startTime = Time.time;
-        BulletTrail_Script.bulletForce(rayHit.point, barrelTip, startTime);
+        //GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, barrelTip.rotation);
+        //BulletTrail_Script = bullet.GetComponent<BulletTrail>();
+        //float startTime = Time.time;
+        //BulletTrail_Script.bulletForce(rayHit.point, barrelTip, startTime);
 
         //Play muzzleflash animation
         muzzleFlash.Play();
@@ -155,5 +156,5 @@ public class GunSystem : MonoBehaviour
     {
         readyToShoot = true;
     }
-   
+    
 }
