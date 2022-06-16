@@ -321,17 +321,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312812987}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d2153fd41f36224984d930f7dc43562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 88226050}
+  isMoving: 0
+  tooFar: 0
   RayOffset: 0
   TargetRayOffset: 0.13
   ignorePlayer:
     serializedVersion: 2
     m_Bits: 4
+  tooFarDist: 0.5
+  lerpTime: 1
+  heightForStep: 1
 --- !u!1 &340371328
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +560,7 @@ GameObject:
   m_Layer: 2
   m_Name: LLPole
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -731,7 +736,7 @@ GameObject:
   m_Layer: 2
   m_Name: RLPole
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -954,6 +959,10 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: -6033292994604218928, guid: fddf8597f50449c48a4041f203bc96db, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -6033292994604218928, guid: fddf8597f50449c48a4041f203bc96db, type: 3}
       propertyPath: m_Name
       value: RightLeg
       objectReference: {fileID: 0}
@@ -1044,6 +1053,10 @@ PrefabInstance:
     - target: {fileID: -1479029815718852386, guid: fddf8597f50449c48a4041f203bc96db, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: -1195148026752213461, guid: fddf8597f50449c48a4041f203bc96db, type: 3}
+      propertyPath: m_Icon
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: -1195148026752213461, guid: fddf8597f50449c48a4041f203bc96db, type: 3}
       propertyPath: m_Name
@@ -1279,17 +1292,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075479426}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d2153fd41f36224984d930f7dc43562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 736809258}
+  isMoving: 0
+  tooFar: 0
   RayOffset: 0
   TargetRayOffset: 0.13
   ignorePlayer:
     serializedVersion: 2
     m_Bits: 4
+  tooFarDist: 0.5
+  lerpTime: 1
+  heightForStep: 1
 --- !u!1 &2099238411
 GameObject:
   m_ObjectHideFlags: 0
