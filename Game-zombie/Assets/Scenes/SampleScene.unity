@@ -327,16 +327,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 88226050}
+  otherLeg: {fileID: 2075479429}
+  TargetYoffset: 0.13
+  tooFarDist: 0.25
   isMoving: 0
+  hasMoved: 0
   tooFar: 0
-  RayOffset: 0
-  TargetRayOffset: 0.13
-  ignorePlayer:
-    serializedVersion: 2
-    m_Bits: 4
-  tooFarDist: 0.5
+  stepHeightx2: 1
+  overstep: 0
   lerpTime: 1
-  heightForStep: 1
+--- !u!4 &312812990 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3114276794595898762, guid: fddf8597f50449c48a4041f203bc96db, type: 3}
+  m_PrefabInstance: {fileID: 1510201684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &340371328
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,7 +856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fddf8597f50449c48a4041f203bc96db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fddf8597f50449c48a4041f203bc96db, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1298,16 +1302,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 736809258}
+  otherLeg: {fileID: 312812990}
+  TargetYoffset: 0.13
+  tooFarDist: 0.25
   isMoving: 0
+  hasMoved: 0
   tooFar: 0
-  RayOffset: 0
-  TargetRayOffset: 0.13
-  ignorePlayer:
-    serializedVersion: 2
-    m_Bits: 4
-  tooFarDist: 0.5
+  stepHeightx2: 1
+  overstep: 0
   lerpTime: 1
-  heightForStep: 1
+--- !u!4 &2075479429 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1683808128459025049, guid: fddf8597f50449c48a4041f203bc96db, type: 3}
+  m_PrefabInstance: {fileID: 1510201684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2099238411
 GameObject:
   m_ObjectHideFlags: 0
