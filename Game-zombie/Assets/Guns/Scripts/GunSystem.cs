@@ -14,11 +14,13 @@ public class GunSystem : MonoBehaviour
     bool shooting, readyToShoot, reloading;
     
     
+    
+
     [Header("Scripts")]
     public Recoil Recoil_Script;
     public Recoil Gun_Recoil_Script;
-    public BulletTrail BulletTrail_Script;
     
+
 
     [Header("Reference")]
     public Camera fpsCam;
@@ -34,7 +36,7 @@ public class GunSystem : MonoBehaviour
     public TextMeshProUGUI text;
     public GameObject bulletPrefab;
     public Transform barrelTip;
-    
+    public TrailRenderer BulletTrail;
 
     [Space(10)]
     [SerializeField] LayerMask IgnoreMask = 1 << 10  | 1 << 11;    
@@ -56,9 +58,10 @@ public class GunSystem : MonoBehaviour
     private void Update()
     {
         MyInput();
-
+        
         //SetText
         text.SetText(bulletsLeft + " / " + magazineSize);
+        
     }
 
     //Inputs for shooting and reloading weapon
@@ -121,18 +124,31 @@ public class GunSystem : MonoBehaviour
         //ShakeCamera
         Recoil_Script.RecoilFire();
         Gun_Recoil_Script.RecoilFire();
+        
+        
         //Graphics
         if(Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range, ~IgnoreMask))
         {
+            
             GameObject bulletHole = Instantiate(bulletHoleGraphics, rayHit.point, Quaternion.identity);
             bulletHole.transform.rotation = Quaternion.FromToRotation(bulletHole.transform.forward, rayHit.normal);
-        }
-        
 
-        GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, barrelTip.rotation);
-        BulletTrail_Script = bullet.GetComponent<BulletTrail>();
-        float startTime = Time.time;
-        BulletTrail_Script.bulletForce(rayHit.point, barrelTip, startTime);
+            TrailRenderer trail = Instantiate(BulletTrail, barrelTip.transform.position, Quaternion.identity);
+
+            StartCoroutine(SpawnTrail(trail, rayHit.point));
+            
+        }
+        else
+        {
+            TrailRenderer trail = Instantiate(BulletTrail, barrelTip.transform.position, Quaternion.identity);
+            StartCoroutine(SpawnTrail(trail, Camera.main.transform.forward * 100f));
+        }
+       
+        
+      
+ 
+        //BulletTravel();
+        
 
         //Play muzzleflash animation
         muzzleFlash.Play();
@@ -155,5 +171,61 @@ public class GunSystem : MonoBehaviour
     {
         readyToShoot = true;
     }
-   
+
+    /*private void BulletTravel()
+    {
+
+
+        float startTime = Time.time;
+        GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, Quaternion.identity);
+        //bulletRB = bullet.GetComponent<Rigidbody>();
+        
+        DeleteBullet_Script = bullet.GetComponent<DeleteBullet>();
+        DeleteBullet_Script.getRayHit(rayHit.point, barrelTip, startTime);
+        
+        
+        
+        
+        
+        /*if(rayHit.point == Vector3.zero)
+        {
+            bulletRB.AddForce(barrelTip.forward * 100, ForceMode.Impulse);
+        }
+        else
+        {
+            bulletRB.AddForce((rayHit.point - barrelTip.position).normalized * 40, ForceMode.Impulse);
+            
+        }
+
+
+    
+}*/
+
+    private IEnumerator SpawnTrail(TrailRenderer Trail, Vector3 Endpoint)
+    {
+        float time = 0;
+        Vector3 StartPosition = Trail.transform.position;
+
+        while (time < 1)
+        {
+            Trail.transform.position = Vector3.Lerp(StartPosition, Endpoint, time);
+            /*if(rayHit.point == Vector3.zero)
+            {
+                Debug.Log("sky");
+                Trail.transform.position = Vector3.Lerp(StartPosition, rayHit.point, time);
+                
+            }
+            else
+            {
+                Debug.Log("hit");
+                Trail.transform.position = Vector3.Lerp(StartPosition, rayHit.point, time);
+                
+            }*/
+            time += Time.deltaTime / Trail.time;
+
+            yield return null;
+        }
+        //Trail.transform.position = Hit.point;
+        Destroy(Trail.gameObject, Trail.time);
+    }
 }

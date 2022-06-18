@@ -5043,7 +5043,7 @@ GameObject:
   - component: {fileID: 4405001660751908909}
   - component: {fileID: -7277507957619516354}
   m_Layer: 11
-  m_Name: Sniper
+  m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5081,14 +5081,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  timeBetweenShooting: 0.1
-  spread: 0
+  timeBetweenShooting: 1
+  spread: 0.06
   range: 100
-  reloadTime: 1
-  timeBetweenShots: 0.1
-  magazineSize: 100
-  bulletsPerTap: 1
-  allowButtonHold: 1
+  reloadTime: 2
+  timeBetweenShots: 0
+  magazineSize: 24
+  bulletsPerTap: 6
+  allowButtonHold: 0
   Recoil_Script: {fileID: 0}
   Gun_Recoil_Script: {fileID: 0}
   DeleteBullet_Script: {fileID: 0}
@@ -5118,8 +5118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b31e59244a3ebc54cb9ac042c550e1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoilX: -2
-  recoilY: 2
+  recoilX: -1
+  recoilY: 1
   recoilZ: 0.35
   snappiness: 1
   returnSpeed: 6
