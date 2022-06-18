@@ -45,7 +45,7 @@ public class GunSystem : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
-     
+        
 
         //Get the recoil script, text and fpsCam from hiearchy
         Recoil_Script = transform.root.GetChild(1).GetChild(0).GetComponent<Recoil>();
