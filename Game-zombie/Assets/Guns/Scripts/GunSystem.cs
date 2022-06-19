@@ -126,6 +126,7 @@ public class GunSystem : MonoBehaviour
         Gun_Recoil_Script.RecoilFire();
         
         
+        
         //Graphics
         if(Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range, ~IgnoreMask))
         {
@@ -141,7 +142,7 @@ public class GunSystem : MonoBehaviour
         else
         {
             TrailRenderer trail = Instantiate(BulletTrail, barrelTip.transform.position, Quaternion.identity);
-            StartCoroutine(SpawnTrail(trail, Camera.main.transform.forward * 100f));
+            StartCoroutine(SpawnTrail(trail, fpsCam.transform.forward * 100f));
         }
        
         
@@ -228,4 +229,6 @@ public class GunSystem : MonoBehaviour
         //Trail.transform.position = Hit.point;
         Destroy(Trail.gameObject, Trail.time);
     }
+
+    
 }

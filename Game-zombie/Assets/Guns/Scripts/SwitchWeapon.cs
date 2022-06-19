@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class SwitchWeapon : MonoBehaviour
 {
+    [Header("Weapons")]
     public List<GameObject> Weapons = new List<GameObject>();
     public KeyCode WeaponChange = KeyCode.Q;
+    public GameObject mygun;
+
+    
     int i;
     void Start()
     {
         GameObject mygun = Instantiate(Weapons[0], this.transform);
         mygun.transform.SetParent(this.transform);
         i = 0;
+        
     }
 
     // Update is called once per frame
@@ -29,12 +34,23 @@ public class SwitchWeapon : MonoBehaviour
                 i = 0;
                 GameObject mygun = Instantiate(Weapons[i], this.transform);
                 mygun.transform.SetParent(this.transform);
+                
             }
             else
             {
                 GameObject mygun = Instantiate(Weapons[i], this.transform);
                 mygun.transform.SetParent(this.transform);
+                
+                
             }
+            GetWeaponName();
+
         }
+    }
+
+    public string GetWeaponName()
+    {
+        
+        return Weapons[i].name;
     }
 }

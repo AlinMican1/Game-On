@@ -2906,7 +2906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Weapons:
   - {fileID: 6076666341791588578, guid: ebe621f122869664a9517364dd8f4fb2, type: 3}
-  - {fileID: 8405444345178594011, guid: 30b508834e6bf13468e2226cfa2b74d7, type: 3}
+  - {fileID: 6076666341791588578, guid: 5c8e9af2e965b3c4880825c4ee7b38e0, type: 3}
   WeaponChange: 113
 --- !u!114 &1428858776
 MonoBehaviour:
