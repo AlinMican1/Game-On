@@ -90,10 +90,12 @@ public class WeaponWheelManager : MonoBehaviour
 
             playerMouseLookScript.enabled = false;
 
-            Vector3 mousePos = Input.mousePosition - transform.position;
-            Debug.DrawLine(transform.position, mousePos);
+            if (Vector3.Distance(Input.mousePosition, transform.position) > 50f)
+            {
+                Vector3 mousePos = Input.mousePosition - transform.position;
 
-            angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+                angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+            }
         }
         else
         {
@@ -115,11 +117,11 @@ public class WeaponWheelManager : MonoBehaviour
         {
             return WWPieces[1].gameObject;
         }
-        else if (angle > 157.5 && angle < 180)
+        else if (angle > 157.5 && angle <= 180)
         {
             return WWPieces[2].gameObject;
         }
-        else if (angle > -180 && angle < -157.5)
+        else if (angle >= -180 && angle < -157.5)
         {
             return WWPieces[2].gameObject;
         }

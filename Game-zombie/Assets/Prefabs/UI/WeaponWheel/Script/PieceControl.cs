@@ -11,6 +11,7 @@ public class PieceControl : MonoBehaviour
     [SerializeField][Range(0,1)] float alpha = 1;
 
     Image pieceImage;
+    bool selected;
 
     void Start()
     {
@@ -24,15 +25,22 @@ public class PieceControl : MonoBehaviour
     {
         var tempcolor = pieceImage.color;
         tempcolor.a = alpha;
-        pieceImage.color = tempcolor;
+        pieceImage.color = tempcolor; 
 
         if (wheelManageScript.WhichPiece() == this.gameObject)
         {
             pieceImage.color = highlightColor;
+            selected = true;
         }
         else
         {
             pieceImage.color = normalColor;
+            selected = false;
+        }
+
+        if (selected)
+        {
+
         }
     }
 }
