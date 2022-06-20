@@ -7,7 +7,7 @@ public class SwitchWeapon : MonoBehaviour
     [Header("Weapons")]
     public List<GameObject> Weapons = new List<GameObject>();
     public KeyCode WeaponChange = KeyCode.Q;
-    public GameObject mygun;
+    GameObject mygun;
 
     
     int i;

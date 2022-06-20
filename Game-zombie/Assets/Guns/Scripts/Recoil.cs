@@ -14,7 +14,7 @@ public class Recoil : MonoBehaviour
     [SerializeField] private float returnSpeed;
     string gunName;
 
-    public SwitchWeapon Switch_Weapon_Script;
+    SwitchWeapon Switch_Weapon_Script;
 
     // Start is called before the first frame update
     void Start()
