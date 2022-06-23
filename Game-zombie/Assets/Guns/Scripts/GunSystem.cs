@@ -11,14 +11,17 @@ public class GunSystem : MonoBehaviour
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
     int bulletsLeft, bulletsShot;
-    bool shooting, readyToShoot, reloading;
-    
+    bool shooting, readyToShoot, reloading, switchedWeapon;
+
+
+  
     
     
 
     [Header("Scripts")]
     public Recoil Recoil_Script;
     public Recoil Gun_Recoil_Script;
+    SwitchWeapon Switch_Weapon_Script;
     
 
 
@@ -43,25 +46,31 @@ public class GunSystem : MonoBehaviour
 
     private void Start()
     {
-        bulletsLeft = magazineSize;
-        readyToShoot = true;
-        
-
+               
         //Get the recoil script, text and fpsCam from hiearchy
         Recoil_Script = transform.root.GetChild(1).GetChild(0).GetComponent<Recoil>();
         text = GameObject.Find("Canvas/weaponAmmoTXT").GetComponent<TextMeshProUGUI>();
         fpsCam = transform.root.GetChild(1).GetChild(0).GetChild(0).GetComponent<Camera>();
         Gun_Recoil_Script = transform.GetComponent<Recoil>();
         
+        
+        Switch_Weapon_Script = transform.parent.GetComponent<SwitchWeapon>();
+
+
+        bulletsLeft = magazineSize;
+        readyToShoot = true;
+
+        
     }
 
     private void Update()
     {
         MyInput();
-        
+
         //SetText
-        text.SetText(bulletsLeft + " / " + magazineSize);
+        SetTextMagazine(bulletsLeft);
         
+
     }
 
     //Inputs for shooting and reloading weapon
@@ -77,6 +86,8 @@ public class GunSystem : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) {
             Reload();
+            
+            
         }
         
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
@@ -141,6 +152,7 @@ public class GunSystem : MonoBehaviour
         }
         else
         {
+            
             TrailRenderer trail = Instantiate(BulletTrail, barrelTip.transform.position, Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, fpsCam.transform.forward * 100f));
         }
@@ -173,34 +185,6 @@ public class GunSystem : MonoBehaviour
         readyToShoot = true;
     }
 
-    /*private void BulletTravel()
-    {
-
-
-        float startTime = Time.time;
-        GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, Quaternion.identity);
-        //bulletRB = bullet.GetComponent<Rigidbody>();
-        
-        DeleteBullet_Script = bullet.GetComponent<DeleteBullet>();
-        DeleteBullet_Script.getRayHit(rayHit.point, barrelTip, startTime);
-        
-        
-        
-        
-        
-        /*if(rayHit.point == Vector3.zero)
-        {
-            bulletRB.AddForce(barrelTip.forward * 100, ForceMode.Impulse);
-        }
-        else
-        {
-            bulletRB.AddForce((rayHit.point - barrelTip.position).normalized * 40, ForceMode.Impulse);
-            
-        }
-
-
-    
-}*/
 
     private IEnumerator SpawnTrail(TrailRenderer Trail, Vector3 Endpoint)
     {
@@ -210,18 +194,7 @@ public class GunSystem : MonoBehaviour
         while (time < 1)
         {
             Trail.transform.position = Vector3.Lerp(StartPosition, Endpoint, time);
-            /*if(rayHit.point == Vector3.zero)
-            {
-                Debug.Log("sky");
-                Trail.transform.position = Vector3.Lerp(StartPosition, rayHit.point, time);
-                
-            }
-            else
-            {
-                Debug.Log("hit");
-                Trail.transform.position = Vector3.Lerp(StartPosition, rayHit.point, time);
-                
-            }*/
+            
             time += Time.deltaTime / Trail.time;
 
             yield return null;
@@ -230,5 +203,16 @@ public class GunSystem : MonoBehaviour
         Destroy(Trail.gameObject, Trail.time);
     }
 
+    
+
+    public void SetTextMagazine(int bulletsLeft)
+    {
+        text.SetText(bulletsLeft + " / " + magazineSize);
+    }
+
+    public int GetBulletsLeft()
+    {
+        return bulletsLeft;
+    }
     
 }

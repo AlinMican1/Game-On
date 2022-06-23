@@ -4992,7 +4992,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4944440895664004498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.041, y: -0.018, z: 1.749}
+  m_LocalPosition: {x: -0.001, y: 0.121, z: 1.749}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5091,7 +5091,6 @@ MonoBehaviour:
   allowButtonHold: 0
   Recoil_Script: {fileID: 0}
   Gun_Recoil_Script: {fileID: 0}
-  DeleteBullet_Script: {fileID: 0}
   fpsCam: {fileID: 0}
   attackPoint: {fileID: 5995421032797920322, guid: 888c5e8bea98be446808fa8bf2949bd1, type: 3}
   whatIsEnemy:
@@ -5118,11 +5117,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b31e59244a3ebc54cb9ac042c550e1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoilX: -1
-  recoilY: 1
+  recoilX: -2
+  recoilY: 3
   recoilZ: 0.35
-  snappiness: 1
-  returnSpeed: 6
+  snappiness: 3
+  returnSpeed: 8
 --- !u!1 &8154653897158804942
 GameObject:
   m_ObjectHideFlags: 0

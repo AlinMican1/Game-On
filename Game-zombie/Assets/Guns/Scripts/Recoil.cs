@@ -51,7 +51,7 @@ public class Recoil : MonoBehaviour
             returnSpeed = 8;
 
         }
-        if (gunName == "Sniper")
+        if (gunName == "AR0")
         {
             recoilX = -3;
             recoilY = 1;

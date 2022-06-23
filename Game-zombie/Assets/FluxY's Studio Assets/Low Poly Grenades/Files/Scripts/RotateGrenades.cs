@@ -9,8 +9,8 @@ public class RotateGrenades : MonoBehaviour {
     private void OnMouseDrag()
     {
         float y = -Input.GetAxis("Mouse Y") * rotSpeed * Mathf.Deg2Rad;
-        transform.RotateAround(Vector3.right, y);
+        transform.Rotate(Vector3.right, y);
         float x = -Input.GetAxis("Mouse X") * rotSpeed * Mathf.Deg2Rad;
-        transform.RotateAround(Vector3.up, x);
+        transform.Rotate(Vector3.up, x);
     }
 }
