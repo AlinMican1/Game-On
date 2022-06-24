@@ -132,3 +132,10 @@ MonoBehaviour:
   delay: 3
   explosionForce: 700
   radius: 5
+  Move_Player_Script: {fileID: 0}
+  ShakeRadius: 60
+  total: 0
+  ExplosionMagnitude: 5
+  CameraRoughness: 2
+  FadeInTime: 1
+  FadeOutTime: 1

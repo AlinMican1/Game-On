@@ -863,6 +863,7 @@ GameObject:
   - component: {fileID: 451173259}
   - component: {fileID: 451173258}
   - component: {fileID: 451173260}
+  - component: {fileID: 451173261}
   m_Layer: 10
   m_Name: PlayerCam
   m_TagString: MainCamera
@@ -926,7 +927,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1079
+    m_Bits: 55
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -953,6 +954,22 @@ MonoBehaviour:
   mouseSens: 100
   playerBody: {fileID: 490759803}
   throwing: {fileID: 1454153819}
+--- !u!114 &451173261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451173256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab8353b5ebd32545867da143199a814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
+  DefaultRotInfluence: {x: 1, y: 1, z: 1}
+  RestPositionOffset: {x: 0, y: 0, z: 0}
+  RestRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &490350403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1136,7 @@ MonoBehaviour:
   controller: {fileID: 490759806}
   speed: 12
   gravity: -9.81
+  target: {fileID: 702309104}
 --- !u!54 &490759808
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3025,7 +3043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 6076666341791588578, guid: ebe621f122869664a9517364dd8f4fb2, type: 3}
+  - {fileID: 6076666341791588578, guid: 1670376718ef5a64795a718996f67ef6, type: 3}
   - {fileID: 6076666341791588578, guid: 5c8e9af2e965b3c4880825c4ee7b38e0, type: 3}
   WeaponChange: 113
 --- !u!114 &1428858776
@@ -3186,7 +3204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForce: 1100
-  grenadePrefab: {fileID: 6765253857843598663, guid: b8e55cdfd5c9fed428e4b2413847c575, type: 3}
+  grenadePrefab: {fileID: 5056803209374766184, guid: a6ff005623ca31b4387428899b41aac9, type: 3}
 --- !u!1 &1479505422
 GameObject:
   m_ObjectHideFlags: 0
@@ -4478,6 +4496,14 @@ PrefabInstance:
     - target: {fileID: 4673633819887552392, guid: bdec0de8094b6a24a9765f3c5d87e074, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673633819927786411, guid: bdec0de8094b6a24a9765f3c5d87e074, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673633819927786411, guid: bdec0de8094b6a24a9765f3c5d87e074, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdec0de8094b6a24a9765f3c5d87e074, type: 3}
