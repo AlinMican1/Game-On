@@ -210,9 +210,6 @@ public class GunSystem : MonoBehaviour
         text.SetText(bulletsLeft + " / " + magazineSize);
     }
 
-    public int GetBulletsLeft()
-    {
-        return bulletsLeft;
-    }
+    
     
 }

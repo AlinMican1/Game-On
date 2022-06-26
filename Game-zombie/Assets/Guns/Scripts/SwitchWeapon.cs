@@ -127,6 +127,7 @@ public class SwitchWeapon : MonoBehaviour
 
         }
         SelectedWeaponName = this.transform.GetChild(0).name;
+        currentActiveWeapon();
 
     }
 
@@ -135,7 +136,7 @@ public class SwitchWeapon : MonoBehaviour
         int previousWeapon = SelectedWeapon;
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (SelectedWeapon >= this.transform.childCount - 1)
+            if (SelectedWeapon >= 2)
             {
                 SelectedWeapon = 0;
             }
@@ -149,8 +150,8 @@ public class SwitchWeapon : MonoBehaviour
         {
             DelayChangetime(0.5f);
             ChangeWeapons();
-            
-           
+
+            currentActiveWeapon();
             GetWeaponName();
         }
      
@@ -184,6 +185,11 @@ public class SwitchWeapon : MonoBehaviour
     IEnumerator DelayChangetime(float time)
     {
         yield return new WaitForSeconds(time);
+    }
+
+    public int currentActiveWeapon()
+    {
+        return SelectedWeapon;
     }
 }
 
