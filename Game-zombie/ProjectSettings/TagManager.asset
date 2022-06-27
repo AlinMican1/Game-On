@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Normal Zomblie
   - Obstacles
+  - Pickable_Weapon
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - 
   - Player
   - Guns
-  - 
-  - 
+  - Glow
+  - Pickable_Item
   - 
   - 
   - 

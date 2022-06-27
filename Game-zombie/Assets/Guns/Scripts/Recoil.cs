@@ -13,13 +13,16 @@ public class Recoil : MonoBehaviour
     [SerializeField] private float snappiness;
     [SerializeField] private float returnSpeed;
     string gunName;
+    Transform weaponHolder;
 
     SwitchWeapon Switch_Weapon_Script;
-
+    PickUpWeapon Pick_Up_Weapon_Script;
     // Start is called before the first frame update
     void Start()
     {
         Switch_Weapon_Script = GameObject.FindObjectOfType<SwitchWeapon>();
+        Pick_Up_Weapon_Script = GameObject.FindObjectOfType<PickUpWeapon>();
+        weaponHolder = this.transform.GetChild(0).GetChild(0);
     }
 
     // Update is called once per frame
@@ -28,9 +31,21 @@ public class Recoil : MonoBehaviour
         targetRotation = Vector3.Lerp(targetRotation, Vector3.zero, returnSpeed * Time.deltaTime);
         currentRotation = Vector3.Slerp(currentRotation, targetRotation, snappiness * Time.fixedDeltaTime);
         transform.localRotation = Quaternion.Euler(currentRotation);
-        gunName = Switch_Weapon_Script.GetWeaponName();
-        ChangeRecoilBasedOnGun(gunName);
+        //gunName = Switch_Weapon_Script.GetWeaponName();
         
+        
+        for(int i = 0; i< 3; i++)
+        {
+            if(weaponHolder.GetChild(i).gameObject.activeSelf == true)
+            {
+                gunName = weaponHolder.GetChild(i).gameObject.name;
+                
+            }
+           
+            print(weaponHolder.GetChild(i));
+        }
+        ChangeRecoilBasedOnGun(gunName);
+       
     }
 
     //Adds recoil when fired, in the x,y,z direction.
@@ -41,6 +56,7 @@ public class Recoil : MonoBehaviour
 
     private void ChangeRecoilBasedOnGun(string gunName)
     {
+        
         if (gunName == "Shotgun")
         {
             recoilX = -2;
