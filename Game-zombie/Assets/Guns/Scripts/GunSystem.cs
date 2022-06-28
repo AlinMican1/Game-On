@@ -12,9 +12,9 @@ public class GunSystem : MonoBehaviour
     public bool allowButtonHold;
     int bulletsLeft, bulletsShot;
     bool shooting, readyToShoot, reloading, switchedWeapon;
-
-
-  
+    bool AllowedToADS, ADS;
+    float LerpTime = 1;
+    Vector3 ADSoffSet;
     
     
 
@@ -49,7 +49,7 @@ public class GunSystem : MonoBehaviour
 
     private void Start()
     {
-               
+        AllowedToADS = true;
         //Get the recoil script, text and fpsCam from hiearchy
         Recoil_Script = transform.root.GetChild(1).GetChild(0).GetComponent<Recoil>();
         text = GameObject.Find("Canvas/weaponAmmoTXT").GetComponent<TextMeshProUGUI>();
@@ -97,6 +97,18 @@ public class GunSystem : MonoBehaviour
         {
             bulletsShot = bulletsPerTap;
             Shoot();
+        }
+        if (Input.GetKey(KeyCode.Mouse1) && AllowedToADS == true)
+        {
+            float StartTime = Time.time;
+            ADS = true;
+            AimDownSight(StartTime);
+        }
+        else
+        {
+            float StartTime = Time.time;
+            ADS = false;
+            AimDownSightNOT(StartTime);
         }
     }
 
@@ -220,6 +232,17 @@ public class GunSystem : MonoBehaviour
         text.SetText(bulletsLeft + " / " + magazineSize);
     }
 
-    
-    
+    public void AimDownSight(float StartTime)
+    {
+        //float PercentageComplete = (Time.time - StartTime) / LerpTime;
+
+        transform.parent.position = transform.parent.parent.GetChild(2).position;
+    }
+    public void AimDownSightNOT(float StartTime)
+    {
+        //float PercentageComplete = (Time.time - StartTime) / LerpTime;
+        transform.parent.parent.GetChild(2).position = transform.parent.position;
+        
+    }
+
 }
