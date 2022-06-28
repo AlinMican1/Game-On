@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - StoneGuy
+  - Ground
+  - Normal Zomblie
+  - Obstacles
+  - Pickable_Weapon
   layers:
   - Default
   - TransparentFX
@@ -15,13 +20,13 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Guns
+  - Glow
+  - Pickable_Item
+  - Concrete
+  - Metal
+  - Wood
   - 
   - 
   - 
