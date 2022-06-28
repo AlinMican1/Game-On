@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 36444369}
   - component: {fileID: 36444368}
   - component: {fileID: 36444367}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Platform (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 344338795}
   - component: {fileID: 344338794}
   - component: {fileID: 344338793}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 350204835}
   - component: {fileID: 350204834}
   - component: {fileID: 350204833}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (5)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -894,7 +894,7 @@ GameObject:
   - component: {fileID: 360567411}
   - component: {fileID: 360567410}
   - component: {fileID: 360567409}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (2)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -1235,7 +1235,7 @@ GameObject:
   - component: {fileID: 442350383}
   - component: {fileID: 442350382}
   - component: {fileID: 442350381}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Platform (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1396,7 +1396,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 13367
+    m_Bits: 62519
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1495,7 +1495,7 @@ GameObject:
   - component: {fileID: 490350407}
   - component: {fileID: 490350406}
   - component: {fileID: 490350405}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (9)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -1678,7 +1678,7 @@ GameObject:
   - component: {fileID: 492359456}
   - component: {fileID: 492359455}
   - component: {fileID: 492359454}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (13)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -1966,7 +1966,7 @@ GameObject:
   - component: {fileID: 611076582}
   - component: {fileID: 611076581}
   - component: {fileID: 611076580}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Platform (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2347,7 +2347,7 @@ GameObject:
   - component: {fileID: 749735191}
   - component: {fileID: 749735190}
   - component: {fileID: 749735189}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (1)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -2449,7 +2449,7 @@ GameObject:
   - component: {fileID: 836862191}
   - component: {fileID: 836862190}
   - component: {fileID: 836862189}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Slope
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2636,7 +2636,7 @@ GameObject:
   - component: {fileID: 944581833}
   - component: {fileID: 944581832}
   - component: {fileID: 944581831}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (14)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -2733,7 +2733,7 @@ GameObject:
   - component: {fileID: 972392903}
   - component: {fileID: 972392902}
   - component: {fileID: 972392901}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (6)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -2835,7 +2835,7 @@ GameObject:
   - component: {fileID: 985976761}
   - component: {fileID: 985976760}
   - component: {fileID: 985976759}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Slope (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2983,7 +2983,7 @@ GameObject:
   - component: {fileID: 993730979}
   - component: {fileID: 993730978}
   - component: {fileID: 993730977}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (8)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -3287,7 +3287,7 @@ GameObject:
   - component: {fileID: 1080069461}
   - component: {fileID: 1080069460}
   - component: {fileID: 1080069459}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Platform
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3419,7 +3419,7 @@ GameObject:
   - component: {fileID: 1277790510}
   - component: {fileID: 1277790509}
   - component: {fileID: 1277790508}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Platform (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3647,7 +3647,7 @@ GameObject:
   - component: {fileID: 1319987764}
   - component: {fileID: 1319987763}
   - component: {fileID: 1319987762}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (12)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -4098,7 +4098,7 @@ GameObject:
   - component: {fileID: 1443869504}
   - component: {fileID: 1443869503}
   - component: {fileID: 1443869502}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (10)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -4241,7 +4241,7 @@ GameObject:
   - component: {fileID: 1479505426}
   - component: {fileID: 1479505425}
   - component: {fileID: 1479505424}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (11)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -4338,7 +4338,7 @@ GameObject:
   - component: {fileID: 1508782559}
   - component: {fileID: 1508782558}
   - component: {fileID: 1508782557}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (4)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -4593,7 +4593,7 @@ GameObject:
   - component: {fileID: 1585280842}
   - component: {fileID: 1585280841}
   - component: {fileID: 1585280840}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4832,7 +4832,7 @@ GameObject:
   - component: {fileID: 1768103711}
   - component: {fileID: 1768103710}
   - component: {fileID: 1768103709}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Slope (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5184,7 +5184,7 @@ GameObject:
   - component: {fileID: 1906940121}
   - component: {fileID: 1906940120}
   - component: {fileID: 1906940119}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (3)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
@@ -5420,7 +5420,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   muzzleFlash: {fileID: 1020192305}
-  bulletHoleGraphics: {fileID: 1000010844420130, guid: 4edabb1c0dde62743b137378c7d22980, type: 3}
+  ConcretebulletHoleGraphics: {fileID: 1000010844420130, guid: 4edabb1c0dde62743b137378c7d22980, type: 3}
+  MetalicbulletHoleGraphics: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d, type: 3}
   text: {fileID: 0}
   bulletPrefab: {fileID: 5007176319739286879, guid: 986616cf467f3e8409155ba9048cfb14, type: 3}
   barrelTip: {fileID: 985105525}
@@ -5668,7 +5669,7 @@ GameObject:
   - component: {fileID: 2092315893}
   - component: {fileID: 2092315892}
   - component: {fileID: 2092315891}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (7)
   m_TagString: Obstacles
   m_Icon: {fileID: 0}

@@ -9,12 +9,12 @@ public class PickUpWeapon : MonoBehaviour
     Get_Weapon_Name Weapon_Name_Script;
     MovePlayer Move_Player_Script;
     SwitchWeapon Switch_Weapon_Script;
+    
+    [Header("Variables")]
     public Text MyText;
     public LayerMask Pickable_Weapon;
-
     string weaponNameSwitched;
-    //public GameObject mygun;
-    //public GameObject Destroygun;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +38,7 @@ public class PickUpWeapon : MonoBehaviour
 
     void PickUpItemText()
     {
-        if (Physics.OverlapSphere(Move_Player_Script.GetPlayerCoordinates(),3,Pickable_Weapon).Length > 0)
+        if (Physics.OverlapSphere(Move_Player_Script.GetPlayerCoordinates(),2,Pickable_Weapon).Length > 0)
         {
             MyText.enabled = true;
            
@@ -55,7 +55,7 @@ public class PickUpWeapon : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         
-        if (Physics.OverlapSphere(Move_Player_Script.GetPlayerCoordinates(), 3, Pickable_Weapon).Length > 0)
+        if (Physics.OverlapSphere(Move_Player_Script.GetPlayerCoordinates(), 2, Pickable_Weapon).Length > 0)
         {
             //if(r)
             if (Physics.Raycast(ray, out hit))
@@ -102,9 +102,6 @@ public class PickUpWeapon : MonoBehaviour
             }
         }
     }
-    public string GetPickedUpWeaponName()
-    {
-        return weaponNameSwitched;
-    }
+    
 
 }

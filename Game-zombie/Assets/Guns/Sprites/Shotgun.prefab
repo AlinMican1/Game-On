@@ -5097,11 +5097,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   muzzleFlash: {fileID: 7004530185339635230}
-  bulletHoleGraphics: {fileID: 1000010844420130, guid: 4edabb1c0dde62743b137378c7d22980, type: 3}
+  ConcretebulletHoleGraphics: {fileID: 1000010844420130, guid: 4edabb1c0dde62743b137378c7d22980, type: 3}
+  MetalicbulletHoleGraphics: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d, type: 3}
   text: {fileID: 0}
   bulletPrefab: {fileID: 5007176319739286879, guid: 986616cf467f3e8409155ba9048cfb14, type: 3}
   barrelTip: {fileID: 6237918671474464316}
   BulletTrail: {fileID: 4211539897554737694, guid: 7f26a2c063e45f8448851e96c970574f, type: 3}
+  ConcreteBulletHoles:
+    serializedVersion: 2
+    m_Bits: 16384
+  MetallicBulletHoles:
+    serializedVersion: 2
+    m_Bits: 32768
   IgnoreMask:
     serializedVersion: 2
     m_Bits: 3072
@@ -5122,6 +5129,7 @@ MonoBehaviour:
   recoilZ: 0.35
   snappiness: 3
   returnSpeed: 8
+  weaponHolder: {fileID: 0}
 --- !u!1 &8154653897158804942
 GameObject:
   m_ObjectHideFlags: 0

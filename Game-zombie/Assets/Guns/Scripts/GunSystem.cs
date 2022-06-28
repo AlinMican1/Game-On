@@ -35,11 +35,14 @@ public class GunSystem : MonoBehaviour
 
     [Header("Graphics")]
     public ParticleSystem muzzleFlash; 
-    public GameObject bulletHoleGraphics;
+    public GameObject ConcretebulletHoleGraphics;
+    public GameObject MetalicbulletHoleGraphics;
     public TextMeshProUGUI text;
     public GameObject bulletPrefab;
     public Transform barrelTip;
     public TrailRenderer BulletTrail;
+    
+
 
     [Space(10)]
     [SerializeField] LayerMask IgnoreMask = 1 << 10  | 1 << 11;    
@@ -141,9 +144,17 @@ public class GunSystem : MonoBehaviour
         //Graphics
         if(Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range, ~IgnoreMask))
         {
-            
-            GameObject bulletHole = Instantiate(bulletHoleGraphics, rayHit.point, Quaternion.identity);
-            bulletHole.transform.rotation = Quaternion.FromToRotation(bulletHole.transform.forward, rayHit.normal);
+           
+            if (rayHit.transform.gameObject.layer == LayerMask.NameToLayer("Concrete"))
+            {
+                GameObject bulletHole = Instantiate(ConcretebulletHoleGraphics, rayHit.point, Quaternion.identity);
+                bulletHole.transform.rotation = Quaternion.FromToRotation(bulletHole.transform.forward, rayHit.normal);
+            }
+            if(rayHit.transform.gameObject.layer == LayerMask.NameToLayer("Metal"))
+            {
+                GameObject bulletHole = Instantiate(MetalicbulletHoleGraphics, rayHit.point, Quaternion.identity);
+                bulletHole.transform.rotation = Quaternion.FromToRotation(bulletHole.transform.forward, rayHit.normal);
+            }
 
             TrailRenderer trail = Instantiate(BulletTrail, barrelTip.transform.position, Quaternion.identity);
 
@@ -152,7 +163,6 @@ public class GunSystem : MonoBehaviour
         }
         else
         {
-            
             TrailRenderer trail = Instantiate(BulletTrail, barrelTip.transform.position, Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, fpsCam.transform.forward * 100f));
         }
