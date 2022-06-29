@@ -17,11 +17,14 @@ public class Recoil : MonoBehaviour
 
     SwitchWeapon Switch_Weapon_Script;
     PickUpWeapon Pick_Up_Weapon_Script;
+    GunSystem Gun_System_Script;
     // Start is called before the first frame update
     void Start()
     {
         Switch_Weapon_Script = GameObject.FindObjectOfType<SwitchWeapon>();
         Pick_Up_Weapon_Script = GameObject.FindObjectOfType<PickUpWeapon>();
+        Gun_System_Script = this.GetComponent<GunSystem>();
+
         weaponHolder = GameObject.Find("WeaponHolder").GetComponent<Transform>();
     }
 
@@ -41,11 +44,9 @@ public class Recoil : MonoBehaviour
                 gunName = weaponHolder.GetChild(i).gameObject.name;
 
             }
-
-            
         }
         ChangeRecoilBasedOnGun(gunName);
-       
+        
     }
 
     //Adds recoil when fired, in the x,y,z direction.
@@ -59,32 +60,73 @@ public class Recoil : MonoBehaviour
         
         if (gunName == "Shotgun")
         {
-            recoilX = -2;
-            recoilY = 3;
-            recoilZ = 0.35f;
+            
+            if(Gun_System_Script.AimingDownSight() == true)
+            {
+                recoilX = -1;
+                recoilY = 1;
+                recoilZ = 0.35f;
 
-            snappiness = 6;
-            returnSpeed = 8;
+                snappiness = 6;
+                returnSpeed = 8;
+            }
+            else if(Gun_System_Script.AimingDownSight() == false)
+            {
+                recoilX = -2;
+                recoilY = 3;
+                recoilZ = 0.35f;
+
+                snappiness = 6;
+                returnSpeed = 8;
+            }
 
         }
         if (gunName == "AR0")
         {
-            recoilX = -3;
-            recoilY = 1;
-            recoilZ = 0.35f;
+            
+            
+            if (Gun_System_Script.AimingDownSight() == true)
+            {
+                recoilX = -1;
+                recoilY = 1;
+                recoilZ = 0.35f;
 
-            snappiness = 3;
-            returnSpeed = 8;
+                snappiness = 6;
+                returnSpeed = 8;
+            }
+            else if (Gun_System_Script.AimingDownSight() == false)
+            {
+                recoilX = -3;
+                recoilY = 1;
+                recoilZ = 0.35f;
+
+                snappiness = 3;
+                returnSpeed = 8;
+            }
 
         }
         if (gunName == "ak")
         {
-            recoilX = -3;
-            recoilY = 2;
-            recoilZ = 0.35f;
+            
 
-            snappiness = 3;
-            returnSpeed = 8;
+            if (Gun_System_Script.AimingDownSight() == true)
+            {
+                recoilX = -1;
+                recoilY = 1;
+                recoilZ = 0.35f;
+
+                snappiness = 6;
+                returnSpeed = 8;
+            }
+            else if (Gun_System_Script.AimingDownSight() == false)
+            {
+                recoilX = -3;
+                recoilY = 2;
+                recoilZ = 0.35f;
+
+                snappiness = 3;
+                returnSpeed = 8;
+            }
 
         }
     }

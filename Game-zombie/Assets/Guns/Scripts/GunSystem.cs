@@ -12,10 +12,8 @@ public class GunSystem : MonoBehaviour
     public bool allowButtonHold;
     int bulletsLeft, bulletsShot;
     bool shooting, readyToShoot, reloading, switchedWeapon;
-    bool AllowedToADS, ADS;
-    float LerpTime = 1;
-    Vector3 ADSoffSet;
-    
+    public bool AllowedToADS, ADS;
+    public float BeginTime;
     
 
     [Header("Scripts")]
@@ -38,7 +36,7 @@ public class GunSystem : MonoBehaviour
     public GameObject ConcretebulletHoleGraphics;
     public GameObject MetalicbulletHoleGraphics;
     public TextMeshProUGUI text;
-    public GameObject bulletPrefab;
+    
     public Transform barrelTip;
     public TrailRenderer BulletTrail;
     
@@ -49,6 +47,8 @@ public class GunSystem : MonoBehaviour
 
     private void Start()
     {
+        //Set the weaponPosition to the weaponHolderPosition;
+        
         AllowedToADS = true;
         //Get the recoil script, text and fpsCam from hiearchy
         Recoil_Script = transform.root.GetChild(1).GetChild(0).GetComponent<Recoil>();
@@ -72,8 +72,8 @@ public class GunSystem : MonoBehaviour
 
         //SetText
         SetTextMagazine(bulletsLeft);
+        //Debug.Log(AimingDownSight());
         
-
     }
 
     //Inputs for shooting and reloading weapon
@@ -98,18 +98,27 @@ public class GunSystem : MonoBehaviour
             bulletsShot = bulletsPerTap;
             Shoot();
         }
-        if (Input.GetKey(KeyCode.Mouse1) && AllowedToADS == true)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && AllowedToADS == true)
         {
-            float StartTime = Time.time;
+            BeginTime = StartTime();
             ADS = true;
-            AimDownSight(StartTime);
+            
         }
-        else
+        if (Input.GetKeyUp(KeyCode.Mouse1))
         {
+            BeginTime = StartTime();
+            ADS = false;
+            
+        }
+        /*else
+        {
+            Debug.Log("Bye");
             float StartTime = Time.time;
             ADS = false;
-            AimDownSightNOT(StartTime);
-        }
+            float PercentageComplete = (Time.time - StartTime) / LerpTime;
+            WeaponPosition = Vector3.Lerp(WeaponPosition, transform.parent.position + ADSoffSet, PercentageComplete);
+        }*/
+        
     }
 
     private void Reload()
@@ -232,17 +241,16 @@ public class GunSystem : MonoBehaviour
         text.SetText(bulletsLeft + " / " + magazineSize);
     }
 
-    public void AimDownSight(float StartTime)
-    {
-        //float PercentageComplete = (Time.time - StartTime) / LerpTime;
 
-        transform.parent.position = transform.parent.parent.GetChild(2).position;
-    }
-    public void AimDownSightNOT(float StartTime)
+    public bool AimingDownSight()
     {
-        //float PercentageComplete = (Time.time - StartTime) / LerpTime;
-        transform.parent.parent.GetChild(2).position = transform.parent.position;
-        
+        return ADS;
     }
+
+    public float StartTime()
+    {
+        return Time.time;
+    }
+   
 
 }

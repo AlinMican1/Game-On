@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2048
     height: 1078.4
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 350}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 19
+  controlID: 45
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -270,13 +270,13 @@ MonoBehaviour:
     height: 808
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 16}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
   - {fileID: 12}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -346,21 +346,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/BlenderItems
+    - Assets/Guns/Sprites
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/BlenderItems
+  - Assets/Guns/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\steam\Game-Project\Game-On\Game-zombie
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: 42530000
-    m_LastClickedID: 21314
+    scrollPos: {x: 0, y: 252.59998}
+    m_SelectedIDs: 94530000
+    m_LastClickedID: 21396
     m_ExpandedIDs: 00000000285300002a5300002c5300002e53000030530000325300003453000036530000385300003a5300003c5300003e530000405300004253000054530000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -517,9 +517,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: c44f0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 0cfbffff
+      m_SelectedIDs: b875feff
+      m_LastClickedID: -100936
+      m_ExpandedIDs: b875feff42c5feff7232ffff5634ffff24f9ffff0cfbfffffc4d00000a4e0000204e00004e4e0000a44e00000c4f00003eaf000094af0000a2af0000b8af0000e6af0000ecaf00003cb00000a4b00000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -563,8 +563,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 420.80002
-    y: 73.6
+    x: 421.8
+    y: 19
     width: 1166
     height: 787
   m_ViewDataDictionary: {fileID: 0}
@@ -650,12 +650,12 @@ MonoBehaviour:
       layout: 4
     - dockPosition: 1
       containerId: overlay-container--right
-      floating: 0
+      floating: 1
       collapsed: 0
       displayed: 0
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: -253.99988, y: -184.60004}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 3
       id: Scene View/Camera
       index: 1
       layout: 4
@@ -752,7 +752,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 0
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Particles
@@ -768,9 +768,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.40045536, y: -0.47829473, z: -1.592454}
+    m_Target: {x: 3.0709615, y: 1.6524389, z: 2.171445}
     speed: 2
-    m_Value: {x: -0.001, y: 0.121, z: 1.755}
+    m_Value: {x: 3.0709615, y: 1.6524389, z: 2.171445}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -817,13 +817,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.11560737, y: -0.8834085, z: 0.29815468, w: 0.34253863}
+    m_Target: {x: 0.0030750423, y: -0.9955946, z: 0.08683596, w: 0.035256837}
     speed: 2
-    m_Value: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+    m_Value: {x: 0.0030750397, y: -0.9955938, z: 0.08683588, w: 0.035256807}
   m_Size:
-    m_Target: 2.8731322
+    m_Target: 7.5959334
     speed: 2
-    m_Value: 0.1416604
+    m_Value: 7.5959334
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -909,7 +909,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
