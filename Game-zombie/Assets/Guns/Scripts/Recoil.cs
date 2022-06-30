@@ -17,15 +17,17 @@ public class Recoil : MonoBehaviour
 
     SwitchWeapon Switch_Weapon_Script;
     PickUpWeapon Pick_Up_Weapon_Script;
-    GunSystem Gun_System_Script;
+    [SerializeField] GunSystem Gun_System_Script;
+    GameObject currentActiveWeapond;
     // Start is called before the first frame update
     void Start()
     {
         Switch_Weapon_Script = GameObject.FindObjectOfType<SwitchWeapon>();
         Pick_Up_Weapon_Script = GameObject.FindObjectOfType<PickUpWeapon>();
-        Gun_System_Script = this.GetComponent<GunSystem>();
 
+       
         weaponHolder = GameObject.Find("WeaponHolder").GetComponent<Transform>();
+        
     }
 
     // Update is called once per frame
@@ -36,16 +38,18 @@ public class Recoil : MonoBehaviour
         transform.localRotation = Quaternion.Euler(currentRotation);
         gunName = Switch_Weapon_Script.GetWeaponName();
 
-
+        
         for (int i = 0; i < 3; i++)
         {
             if (weaponHolder.GetChild(i).gameObject.activeSelf == true)
             {
                 gunName = weaponHolder.GetChild(i).gameObject.name;
-
+                currentActiveWeapond = weaponHolder.GetChild(i).gameObject;
+                Gun_System_Script = currentActiveWeapond.GetComponent<GunSystem>();
             }
         }
         ChangeRecoilBasedOnGun(gunName);
+
         
     }
 

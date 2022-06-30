@@ -11,6 +11,7 @@ public class AimDownSight : MonoBehaviour
     GunSystem Aim_Down_Sight_Script;
     public float LerpSpeed = 1f;
     Transform ADSPosition;
+    public Vector3 StartingPositionOffSet;
     Transform WeaponPosition;
 
     // Start is called before the first frame update
@@ -32,7 +33,7 @@ public class AimDownSight : MonoBehaviour
 
             float PercentageComplete = (Time.time - StartTime) / LerpTime * LerpSpeed;
             
-            transform.position = Vector3.Lerp(WeaponPosition.position, transform.parent.parent.GetChild(2).position + transform.right * ADSoffSet.x + transform.up * ADSoffSet.y + transform.forward * ADSoffSet.z, PercentageComplete);
+            transform.position = Vector3.Lerp(WeaponPosition.position + transform.right * StartingPositionOffSet.x + transform.up * StartingPositionOffSet.y + transform.forward * StartingPositionOffSet.z, transform.parent.parent.GetChild(2).position + transform.right * ADSoffSet.x + transform.up * ADSoffSet.y + transform.forward * ADSoffSet.z, PercentageComplete);
            
         }
         else if(Aim_Down_Sight_Script.AimingDownSight() == false && transform.position != WeaponPosition.position)  
@@ -40,7 +41,7 @@ public class AimDownSight : MonoBehaviour
             
             float PercentageComplete = (Time.time - StartTime) / LerpTime* LerpSpeed;
 
-            transform.position = Vector3.Lerp(transform.parent.parent.GetChild(2).position + transform.right * ADSoffSet.x + transform.up * ADSoffSet.y + transform.forward * ADSoffSet.z, WeaponPosition.position, PercentageComplete);
+            transform.position = Vector3.Lerp(transform.parent.parent.GetChild(2).position + transform.right * ADSoffSet.x + transform.up * ADSoffSet.y + transform.forward * ADSoffSet.z, WeaponPosition.position +  transform.right * StartingPositionOffSet.x + transform.up * StartingPositionOffSet.y + transform.forward * StartingPositionOffSet.z, PercentageComplete);
 
             
         }
