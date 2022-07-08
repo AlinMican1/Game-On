@@ -25,9 +25,9 @@ public class Recoil : MonoBehaviour
         Switch_Weapon_Script = GameObject.FindObjectOfType<SwitchWeapon>();
         Pick_Up_Weapon_Script = GameObject.FindObjectOfType<PickUpWeapon>();
 
-       
+
         weaponHolder = GameObject.Find("WeaponHolder").GetComponent<Transform>();
-        
+
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class Recoil : MonoBehaviour
         transform.localRotation = Quaternion.Euler(currentRotation);
         gunName = Switch_Weapon_Script.GetWeaponName();
 
-        
+
         for (int i = 0; i < 3; i++)
         {
             if (weaponHolder.GetChild(i).gameObject.activeSelf == true)
@@ -50,7 +50,7 @@ public class Recoil : MonoBehaviour
         }
         ChangeRecoilBasedOnGun(gunName);
 
-        
+
     }
 
     //Adds recoil when fired, in the x,y,z direction.
@@ -61,11 +61,11 @@ public class Recoil : MonoBehaviour
 
     private void ChangeRecoilBasedOnGun(string gunName)
     {
-        
+
         if (gunName == "Shotgun")
         {
-            
-            if(Gun_System_Script.AimingDownSight() == true)
+
+            if (Gun_System_Script.AimingDownSight() == true)
             {
                 recoilX = -1;
                 recoilY = 1;
@@ -74,7 +74,7 @@ public class Recoil : MonoBehaviour
                 snappiness = 6;
                 returnSpeed = 8;
             }
-            else if(Gun_System_Script.AimingDownSight() == false)
+            else if (Gun_System_Script.AimingDownSight() == false)
             {
                 recoilX = -2;
                 recoilY = 3;
@@ -87,8 +87,8 @@ public class Recoil : MonoBehaviour
         }
         if (gunName == "AR0")
         {
-            
-            
+
+
             if (Gun_System_Script.AimingDownSight() == true)
             {
                 recoilX = -1;
@@ -111,7 +111,7 @@ public class Recoil : MonoBehaviour
         }
         if (gunName == "ak")
         {
-            
+
 
             if (Gun_System_Script.AimingDownSight() == true)
             {
@@ -133,8 +133,59 @@ public class Recoil : MonoBehaviour
             }
 
         }
+        if (gunName == "Glock")
+        {
+
+
+            if (Gun_System_Script.AimingDownSight() == true)
+            {
+                recoilX = -1;
+                recoilY = 1;
+                recoilZ = 0.35f;
+
+                snappiness = 6;
+                returnSpeed = 8;
+            }
+            else if (Gun_System_Script.AimingDownSight() == false)
+            {
+                recoilX = -1.5f;
+                recoilY = 1.2f;
+                recoilZ = 0.15f;
+
+                snappiness = 4;
+                returnSpeed = 10;
+            }
+
+
+
+
+        }
+        if (gunName == "Praps-Auto")
+        {
+
+
+            if (Gun_System_Script.AimingDownSight() == true)
+            {
+                recoilX = -1;
+                recoilY = 1;
+                recoilZ = 0.35f;
+
+                snappiness = 6;
+                returnSpeed = 8;
+            }
+            else if (Gun_System_Script.AimingDownSight() == false)
+            {
+                recoilX = -2f;
+                recoilY = 3f;
+                recoilZ = 0.35f;
+
+                snappiness = 4;
+                returnSpeed = 10;
+            }
+
+        }
+
+
+
     }
-        
-       
-    
 }

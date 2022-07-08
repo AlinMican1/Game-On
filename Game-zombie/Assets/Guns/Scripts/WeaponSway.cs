@@ -11,12 +11,36 @@ public class WeaponSway : MonoBehaviour
     [SerializeField] private float MoveSwayMultiplier;
     [SerializeField] private float MoveSmooth;
     // Start is called before the first frame update
-
+    GunSystem Aim_Down;
+    float mouseX;
+    float mouseY;
+    public GameObject weaponHolder;
+    private void Start()
+    {
+        Aim_Down = GameObject.FindObjectOfType<GunSystem>();
+    }
     // Update is called once per frame
     private void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * swayMultiplier;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * swayMultiplier;
+       for (int i = 0; i < 3; i++)
+        {
+            if (weaponHolder.transform.GetChild(i).gameObject.activeSelf == true)
+            {
+                Aim_Down = weaponHolder.transform.GetChild(i).GetComponent<GunSystem>();
+            }
+        }
+        
+        if(Aim_Down.AimingDownSight() == true)
+        {
+            mouseX = Input.GetAxisRaw("Mouse X") * swayMultiplier * 0.5f;
+            mouseY = Input.GetAxisRaw("Mouse Y") * swayMultiplier * 0.5f;
+        }
+        else
+        {
+            mouseX = Input.GetAxisRaw("Mouse X") * swayMultiplier;
+            mouseY = Input.GetAxisRaw("Mouse Y") * swayMultiplier;
+        }
+       
 
 
         //Calculate Angular rotation
@@ -28,6 +52,8 @@ public class WeaponSway : MonoBehaviour
 
         transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, smooth * Time.deltaTime);
 
+
+        //Moving Sway
         float moveZ = Input.GetAxisRaw("Vertical") * MoveSwayMultiplier;
         float moveX = Input.GetAxisRaw("Horizontal") * MoveSwayMultiplier;
 

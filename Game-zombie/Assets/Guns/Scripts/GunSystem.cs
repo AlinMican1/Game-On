@@ -20,8 +20,10 @@ public class GunSystem : MonoBehaviour
     public Recoil Recoil_Script;
     public Recoil Gun_Recoil_Script;
     SwitchWeapon Switch_Weapon_Script;
-    
-
+   
+    [Header("Animations")]
+    public bool Pistol_shoot_Anim = false;
+    public bool Reload_Anim = false;
 
     [Header("Reference")]
     public Camera fpsCam;
@@ -39,8 +41,8 @@ public class GunSystem : MonoBehaviour
     
     public Transform barrelTip;
     public TrailRenderer BulletTrail;
-    
 
+    
 
     [Space(10)]
     [SerializeField] LayerMask IgnoreMask = 1 << 10  | 1 << 11;    
@@ -58,7 +60,8 @@ public class GunSystem : MonoBehaviour
         
         
         Switch_Weapon_Script = transform.parent.GetComponent<SwitchWeapon>();
-
+        //Get Animation
+        
 
         bulletsLeft = magazineSize;
         readyToShoot = true;
@@ -68,11 +71,12 @@ public class GunSystem : MonoBehaviour
 
     private void Update()
     {
+        
         MyInput();
 
         //SetText
         SetTextMagazine(bulletsLeft);
-        //Debug.Log(AimingDownSight());
+       // Anim.SetBool("Aiming", ADS);
         
     }
 
@@ -81,10 +85,13 @@ public class GunSystem : MonoBehaviour
         if (allowButtonHold)
         {
             shooting = Input.GetKey(KeyCode.Mouse0);
+            
         }
         else
         {
             shooting = Input.GetKeyDown(KeyCode.Mouse0);
+            
+            
         }
 
         if(Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) {
@@ -103,11 +110,15 @@ public class GunSystem : MonoBehaviour
             BeginTime = StartTime();
             ADS = true;
             
+           
+
         }
         if (Input.GetKeyUp(KeyCode.Mouse1))
         {
             BeginTime = StartTime();
             ADS = false;
+            
+            
             
         }
         /*else
@@ -124,12 +135,14 @@ public class GunSystem : MonoBehaviour
     private void Reload()
     {
         reloading = true;
+        Reload_Anim = true;
         Invoke("ReloadFinished", reloadTime);
     }
     private void ReloadFinished()
     {
         bulletsLeft = magazineSize;
         reloading = false;
+        Reload_Anim = false;
     }
 
     private void Shoot()
@@ -178,7 +191,8 @@ public class GunSystem : MonoBehaviour
             }
 
             TrailRenderer trail = Instantiate(BulletTrail, barrelTip.transform.position, Quaternion.identity);
-
+            float temp = Time.time;
+            
             StartCoroutine(SpawnTrail(trail, rayHit.point));
             
         }
@@ -196,7 +210,9 @@ public class GunSystem : MonoBehaviour
 
         //Play muzzleflash animation
         muzzleFlash.Play();
+        //Play animation barrel
         
+        Pistol_shoot_Anim = true;
         
 
 
@@ -213,6 +229,8 @@ public class GunSystem : MonoBehaviour
 
     private void ResetShot()
     {
+        
+        Pistol_shoot_Anim = false;
         readyToShoot = true;
     }
 
@@ -251,6 +269,8 @@ public class GunSystem : MonoBehaviour
     {
         return Time.time;
     }
-   
 
+    //Graphics Functions
+
+    
 }
