@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Glow
+  m_Name: Glow-Pistol
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
   - _EMISSION
@@ -64,7 +64,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.62
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
@@ -76,6 +76,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9528302, g: 0.10247413, b: 0.6624877, a: 1}
-    - _EmissionColor: {r: 135.58704, g: 3.5493977, b: 86.877304, a: 1}
+    - _Color: {r: 0.0707725, g: 0.21512534, b: 0.26415092, a: 1}
+    - _EmissionColor: {r: 0.9510378, g: 9.082411, b: 8.939755, a: 1}
   m_BuildTextureStacks: []
