@@ -14,6 +14,8 @@ public class WeaponSway : MonoBehaviour
     GunSystem Aim_Down;
     float mouseX;
     float mouseY;
+    float moveZ;
+    float moveX;
     public GameObject weaponHolder;
     private void Start()
     {
@@ -54,9 +56,17 @@ public class WeaponSway : MonoBehaviour
 
 
         //Moving Sway
-        float moveZ = Input.GetAxisRaw("Vertical") * MoveSwayMultiplier;
-        float moveX = Input.GetAxisRaw("Horizontal") * MoveSwayMultiplier;
-
+        if(Aim_Down.AimingDownSight() == true)
+        {
+            moveZ = Input.GetAxisRaw("Vertical") * MoveSwayMultiplier * 0.5f;
+            moveX = Input.GetAxisRaw("Horizontal") * MoveSwayMultiplier  * 0.5f;
+        }
+        else
+        {
+            moveZ = Input.GetAxisRaw("Vertical") * MoveSwayMultiplier;
+            moveX = Input.GetAxisRaw("Horizontal") * MoveSwayMultiplier;
+        }
+     
         Quaternion MoverotationZ = Quaternion.AngleAxis(-moveX, Vector3.up);
         Quaternion MoverotationX = Quaternion.AngleAxis(moveZ, Vector3.right);
 

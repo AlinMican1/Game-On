@@ -16,7 +16,7 @@ public class PistolAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Gun_System_Script.Pistol_shoot_Anim);
+        
         if(Gun_System_Script.Pistol_shoot_Anim == true)
         {
             Shoot_Anim.SetTrigger("Shoot");

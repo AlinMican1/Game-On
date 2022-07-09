@@ -121,14 +121,7 @@ public class GunSystem : MonoBehaviour
             
             
         }
-        /*else
-        {
-            Debug.Log("Bye");
-            float StartTime = Time.time;
-            ADS = false;
-            float PercentageComplete = (Time.time - StartTime) / LerpTime;
-            WeaponPosition = Vector3.Lerp(WeaponPosition, transform.parent.position + ADSoffSet, PercentageComplete);
-        }*/
+       
         
     }
 
@@ -178,7 +171,7 @@ public class GunSystem : MonoBehaviour
         //Graphics
         if(Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range, ~IgnoreMask))
         {
-           
+            //Instantiate bulletHoles depending on the surface
             if (rayHit.transform.gameObject.layer == LayerMask.NameToLayer("Concrete"))
             {
                 GameObject bulletHole = Instantiate(ConcretebulletHoleGraphics, rayHit.point, Quaternion.identity);
