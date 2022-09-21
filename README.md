@@ -1,2 +1,8 @@
 # Game-On
-Producing the finest of the finest
+-A first person zombie shooter based in a futuristic neon city, with several different weapons to choose from such as shotguns, 
+semi automatic, pistols and explosives (so far).
+
+-Using blender to create several weapon and structural prototypes, which are imported into the game where are manipulated by recoil scripts
+
+-Using Unity's particle system, i was able to introduce explosion effects for grenades and adding an array to get all the obstacles in the explosion radius, allowing me to manipulate the items that are inside the radius.
+
