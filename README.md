@@ -1,4 +1,4 @@
-# Game-On
+# Weapon-Simulator
 -A first person zombie shooter based in a futuristic neon city, with several different weapons to choose from such as shotguns, 
 semi automatic, pistols and explosives (so far).
 
