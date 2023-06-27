@@ -1,15 +1,13 @@
 # Weapon-Simulator
--A first person zombie shooter based in a futuristic neon city, with several different weapons to choose from such as shotguns, 
-semi automatic, pistols and explosives (so far).
+Versatile Software Engineer | Expertise in Blender, Unity, and Game Development
 
--Using blender to create several weapon and structural prototypes, which are imported into the game where are manipulated by recoil scripts
+Leveraging Blender, I created multiple weapon and structural prototypes, which were seamlessly imported into the game. These assets were then manipulated using recoil scripts, adding realistic dynamics and enhancing the overall gameplay immersion.
 
--Using Unity's particle system, i was able to introduce explosion effects for grenades and adding an array to get all the obstacles in the explosion radius, allowing me to manipulate the items that are inside the radius.
+By harnessing the power of Unity's particle system, I incorporated visually stunning explosion effects for grenades. Additionally, I implemented an array that captures all obstacles within the explosion radius, granting me the ability to manipulate the affected objects, thereby enriching the gameplay mechanics and interactions.
 
--Here are some short clips on what I have been working on. The game is stil in very early stages, currently testing mechanics! Top right there is a play
-button.
+I have shared short clips showcasing the ongoing development progress. Although the game is currently in its early stages, with an emphasis on testing mechanics, you can catch a glimpse of the exciting features being implemented. Look out for the play button in the top right corner!
 
--ADS, recoil patterns, projectile lerping.
+Some other key areas of focus include implementing ADS (Aim Down Sight) functionality, designing recoil patterns to ensure authentic weapon behavior, and employing projectile lerping techniques for smooth and realistic projectile motion.
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/95189863/193011830-e45e198d-8a36-42af-98ba-f4e2bd489c26.gif)
 
